@@ -7,6 +7,8 @@ import 'package:agri_connect/screens/consumer/product_detail_screen.dart';
 import 'package:agri_connect/screens/consumer/cart_screen.dart';
 import 'package:agri_connect/screens/consumer/qr_scanner_screen.dart';
 import 'package:agri_connect/screens/consumer/consumer_profile_screen.dart';
+import 'package:agri_connect/screens/onboarding/login_screen.dart';
+import 'package:agri_connect/screens/onboarding/landing_screen.dart'; // Import the landing screen
 import 'package:agri_connect/widgets/product_card.dart';
 import 'package:agri_connect/widgets/user_avatar.dart';
 import 'package:agri_connect/widgets/bottom_navigation.dart';
@@ -46,6 +48,15 @@ class _ConsumerDashboardState extends State<ConsumerDashboard> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Marketplace'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const LandingScreen()),
+            );
+          },
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications_outlined),
